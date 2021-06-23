@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% form_theme formProduct 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <h1>Ajouter un Produit</h1>
+
+    {{ form_start(formProduct) }}
+    {{form_widget(formProduct)}}
+    <button type="submit" class="btn btn-success">
+    
+        {% if editMode %}
+      Enregistrer les modifications
+    {% else %}
+      Ajouter le Produit
+    {% endif %}
+    
+    </button>
+    {{ form_end(formProduct) }}
+{% endblock %}
